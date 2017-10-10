@@ -12,7 +12,7 @@ import ObjectMapper
 import AlamofireObjectMapper
 import RealmSwift
 
-public class User: Mappable {
+public class UserRead: Mappable {
     var name:String? = ""
     var email:String? = ""
     var birthDate: String? = ""
@@ -31,12 +31,33 @@ public class User: Mappable {
     
     public func mapping(map: Map) {
         name        <- map["name"]
-        email      <- map["email"]
-        birthDate <- map["birthDate"]
-        photo      <- map["photo"]
-        password     <- map["password"]
-        id     <- map["id"]
+        email       <- map["email"]
+        birthDate   <- map["birthDate"]
+        photo       <- map["photo"]
+        password    <- map["password"]
+        id          <- map["id"]
         
+    }
+    
+    public static func login(email: String!, password: String!,completionHandler:@escaping ((Bool?)->())) {
+        let URL = "http://numerus-api.herokuapp.com/user?email=" + email
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Content-Type" : "application/json"
+        ]
+        Alamofire.request(URL, method: .get, headers: headers).responseArray { (response: DataResponse<[UserRead]>) in
+            if(response.result.isSuccess) {
+                let user: UserRead = response.result.value![0]
+                if(user.password == password){
+                    userGlobal = user
+                    completionHandler(true)
+                }else{
+                    completionHandler(false)
+                }
+            } else {
+                completionHandler(false)
+            }
+        }
     }
     
     

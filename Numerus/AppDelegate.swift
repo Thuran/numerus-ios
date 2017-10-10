@@ -8,10 +8,14 @@
 
 import UIKit
 
+var userGlobal: UserRead?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -41,6 +45,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
 }
+
+extension UIViewController{
+    
+ 
+    
+    
+    func displayAlert(text: String){
+        let alertController = UIAlertController(title: "Numerus", message:
+            text, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func openViewController(storyboardId: String){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: storyboardId)
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func openNavigationViewController(storyboardId: String){
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: storyboardId)
+        self.navigationController?.pushViewController(viewController!, animated: true)
+    }
+    
+}
+
 

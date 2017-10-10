@@ -10,10 +10,14 @@ import UIKit
 
 class FormulaTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var authorImage: UIImageView!
+    @IBOutlet weak var formulaNameLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    @IBOutlet weak var authorNameLabel: UILabel!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

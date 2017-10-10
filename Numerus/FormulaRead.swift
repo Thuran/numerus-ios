@@ -12,10 +12,9 @@ import ObjectMapper
 import AlamofireObjectMapper
 import RealmSwift
 
-public class Formula: Mappable {
+public class FormulaRead: Mappable {
     var name:String? = ""
-    var author:String? = ""
-    var authorImage: String? = ""
+    var author:UserRead? = UserRead()
     var rating:String = ""
     var context:String? = ""
     
@@ -31,30 +30,29 @@ public class Formula: Mappable {
     public func mapping(map: Map) {
         name        <- map["name"]
         author      <- map["author"]
-        authorImage <- map["authorImage"]
         rating      <- map["rating"]
         context     <- map["context"]
         
     }
     
     
-    public static func list(completionHandler:@escaping (([Formula],String?)->())) {
+    public static func list(completionHandler:@escaping (([FormulaRead],String?)->())) {
         let URL = "http://numerus-api.herokuapp.com/formula"
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Content-Type" : "application/json"
         ]
-        Alamofire.request(URL, method: .get, encoding: JSONEncoding.default,headers: headers).responseArray { (response: DataResponse<[Formula]>) in
+        Alamofire.request(URL, method: .get, encoding: JSONEncoding.default,headers: headers).responseArray { (response: DataResponse<[FormulaRead]>) in
             if(response.result.isSuccess) {
                 
                 completionHandler(response.result.value!, nil)
             } else {
-                completionHandler([Formula](), "Erro")
+                completionHandler([FormulaRead](), "Erro")
             }
         }
     }
     
-    public static func filter(search: String!,completionHandler:@escaping (([Formula],String?)->())) {
+    public static func filter(search: String!,completionHandler:@escaping (([FormulaRead],String?)->())) {
         let url = "http://numerus-api.herokuapp.com/formula"
         let parameters: Parameters = [
             "where": [
@@ -69,12 +67,12 @@ public class Formula: Mappable {
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request(url, method: .get, parameters: parameters,encoding: JSONEncoding.default,headers: headers).responseArray { (response: DataResponse<[Formula]>) in
+        Alamofire.request(url, method: .get, parameters: parameters,encoding: JSONEncoding.default,headers: headers).responseArray { (response: DataResponse<[FormulaRead]>) in
             if(response.result.isSuccess) {
                 
                 completionHandler(response.result.value!, nil)
             } else {
-                completionHandler([Formula](), "Erro")
+                completionHandler([FormulaRead](), "Erro")
             }
         }
     }
