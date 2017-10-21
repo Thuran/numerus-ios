@@ -112,24 +112,24 @@ class RegisterViewController: UIViewController {
         
         RegisterModel.create(register: user) { (err) in
             if(err == nil){
-                self.displayAlert(text: "Conta criada com sucesso!")
-                self.openViewController(storyboardId: "tabBarController")
+                self.success()
             }else{
                 self.displayAlert(text: err!)
-                
+
             }
         }
         
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func success() {
+        let alert = UIAlertController(title: "Numerus", message: "Conta criada com sucesso!", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak alert] (_) in
+            self.openViewController(storyboardId: "tabBarController")
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
-    */
 
 }

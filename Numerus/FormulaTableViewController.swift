@@ -129,5 +129,27 @@ class FormulaTableViewController: UITableViewController, UISearchResultsUpdating
         cell.ratingLabel.text = formula.rating
         return cell
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let usingFormula = self.storyboard?.instantiateViewController(withIdentifier: "usingFormulaViewController") as! UsingFormulaViewController
+        let row = indexPath.row
+        let formula: FormulaRead?
+        if (resultSearchController.isActive) {
+            formula = self.filteredList[row]
+        }else{
+            formula =  self.list[row]
+        }
+        
+        usingFormula.authorImageString = (formula?.author?.photo)!
+        usingFormula.authorNameString = (formula?.author?.name)!
+        usingFormula.expressionString = (formula?.context)!
+        usingFormula.formulaNameString = (formula?.name)!
+        usingFormula.ratingString = (formula?.rating)!
+        
+        self.navigationController?.pushViewController(usingFormula, animated: true)
+        
+        
+    }
 
 }

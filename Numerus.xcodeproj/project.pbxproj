@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		312BE86E1ECBBBFD00E141D4 /* FormulaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312BE86D1ECBBBFD00E141D4 /* FormulaTableViewController.swift */; };
 		312BE8701ECBBC1200E141D4 /* FormulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312BE86F1ECBBC1200E141D4 /* FormulaTableViewCell.swift */; };
+		3132435B1F9AB88300179702 /* AddFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132435A1F9AB88300179702 /* AddFormulaViewController.swift */; };
+		3132435E1F9ABBD700179702 /* CalculateExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132435D1F9ABBD700179702 /* CalculateExpression.swift */; };
+		313243601F9AC20300179702 /* UsingFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3132435F1F9AC20300179702 /* UsingFormulaViewController.swift */; };
 		31BAC0ED1F71DCC900BC881C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAC0EC1F71DCC900BC881C /* RegisterViewController.swift */; };
 		31BAC0EF1F71DD0B00BC881C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAC0EE1F71DD0B00BC881C /* RegisterModel.swift */; };
 		31BAC0F11F71DE1A00BC881C /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAC0F01F71DE1900BC881C /* ErrorModel.swift */; };
@@ -26,6 +29,9 @@
 		1717A84321CFCE588B57C523 /* Pods_Numerus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Numerus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		312BE86D1ECBBBFD00E141D4 /* FormulaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaTableViewController.swift; sourceTree = "<group>"; };
 		312BE86F1ECBBC1200E141D4 /* FormulaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaTableViewCell.swift; sourceTree = "<group>"; };
+		3132435A1F9AB88300179702 /* AddFormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFormulaViewController.swift; sourceTree = "<group>"; };
+		3132435D1F9ABBD700179702 /* CalculateExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateExpression.swift; sourceTree = "<group>"; };
+		3132435F1F9AC20300179702 /* UsingFormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingFormulaViewController.swift; sourceTree = "<group>"; };
 		31BAC0EC1F71DCC900BC881C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		31BAC0EE1F71DD0B00BC881C /* RegisterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		31BAC0F01F71DE1900BC881C /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 		312BE86B1ECBBBE000E141D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3132435C1F9ABBC000179702 /* Math */,
 				31E420DA1F7B1F1C00333E55 /* Create */,
 				31E420D91F7B1F1200333E55 /* Read */,
 				31BAC0F01F71DE1900BC881C /* ErrorModel.swift */,
@@ -78,8 +85,18 @@
 				312BE86D1ECBBBFD00E141D4 /* FormulaTableViewController.swift */,
 				312BE86F1ECBBC1200E141D4 /* FormulaTableViewCell.swift */,
 				31BAC0EC1F71DCC900BC881C /* RegisterViewController.swift */,
+				3132435A1F9AB88300179702 /* AddFormulaViewController.swift */,
+				3132435F1F9AC20300179702 /* UsingFormulaViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3132435C1F9ABBC000179702 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				3132435D1F9ABBD700179702 /* CalculateExpression.swift */,
+			);
+			name = Math;
 			sourceTree = "<group>";
 		};
 		31E420D91F7B1F1200333E55 /* Read */ = {
@@ -266,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				312BE86E1ECBBBFD00E141D4 /* FormulaTableViewController.swift in Sources */,
+				3132435B1F9AB88300179702 /* AddFormulaViewController.swift in Sources */,
 				31BAC0EF1F71DD0B00BC881C /* RegisterModel.swift in Sources */,
+				3132435E1F9ABBD700179702 /* CalculateExpression.swift in Sources */,
+				313243601F9AC20300179702 /* UsingFormulaViewController.swift in Sources */,
 				31F77EA81ECBB29400DAEDBF /* ViewController.swift in Sources */,
 				31F77EA61ECBB29400DAEDBF /* AppDelegate.swift in Sources */,
 				31BAC0ED1F71DCC900BC881C /* RegisterViewController.swift in Sources */,
