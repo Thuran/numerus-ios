@@ -16,6 +16,8 @@
 		31BAC0EF1F71DD0B00BC881C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAC0EE1F71DD0B00BC881C /* RegisterModel.swift */; };
 		31BAC0F11F71DE1A00BC881C /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BAC0F01F71DE1900BC881C /* ErrorModel.swift */; };
 		31E420D81F7B1CEE00333E55 /* UserRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E420D71F7B1CEE00333E55 /* UserRead.swift */; };
+		31F5E1851F9FED5500067D70 /* ShareFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5E1841F9FED5500067D70 /* ShareFormulaViewController.swift */; };
+		31F5E1871F9FEE4E00067D70 /* FormulaCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5E1861F9FEE4E00067D70 /* FormulaCreate.swift */; };
 		31F77EA61ECBB29400DAEDBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F77EA51ECBB29400DAEDBF /* AppDelegate.swift */; };
 		31F77EA81ECBB29400DAEDBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F77EA71ECBB29400DAEDBF /* ViewController.swift */; };
 		31F77EAB1ECBB29400DAEDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F77EA91ECBB29400DAEDBF /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		31BAC0EE1F71DD0B00BC881C /* RegisterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		31BAC0F01F71DE1900BC881C /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		31E420D71F7B1CEE00333E55 /* UserRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRead.swift; sourceTree = "<group>"; };
+		31F5E1841F9FED5500067D70 /* ShareFormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareFormulaViewController.swift; sourceTree = "<group>"; };
+		31F5E1861F9FEE4E00067D70 /* FormulaCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaCreate.swift; sourceTree = "<group>"; };
 		31F77EA21ECBB29400DAEDBF /* Numerus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numerus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F77EA51ECBB29400DAEDBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31F77EA71ECBB29400DAEDBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				31BAC0EC1F71DCC900BC881C /* RegisterViewController.swift */,
 				3132435A1F9AB88300179702 /* AddFormulaViewController.swift */,
 				3132435F1F9AC20300179702 /* UsingFormulaViewController.swift */,
+				31F5E1841F9FED5500067D70 /* ShareFormulaViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				31BAC0EE1F71DD0B00BC881C /* RegisterModel.swift */,
+				31F5E1861F9FEE4E00067D70 /* FormulaCreate.swift */,
 			);
 			name = Create;
 			sourceTree = "<group>";
@@ -284,7 +290,9 @@
 			files = (
 				312BE86E1ECBBBFD00E141D4 /* FormulaTableViewController.swift in Sources */,
 				3132435B1F9AB88300179702 /* AddFormulaViewController.swift in Sources */,
+				31F5E1851F9FED5500067D70 /* ShareFormulaViewController.swift in Sources */,
 				31BAC0EF1F71DD0B00BC881C /* RegisterModel.swift in Sources */,
+				31F5E1871F9FEE4E00067D70 /* FormulaCreate.swift in Sources */,
 				3132435E1F9ABBD700179702 /* CalculateExpression.swift in Sources */,
 				313243601F9AC20300179702 /* UsingFormulaViewController.swift in Sources */,
 				31F77EA81ECBB29400DAEDBF /* ViewController.swift in Sources */,

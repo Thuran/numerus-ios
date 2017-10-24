@@ -46,6 +46,9 @@ class AddFormulaViewController: UIViewController {
         }
         
     }
+    @IBAction func shareButtonTouch(_ sender: Any) {
+        contextGlobal = expressionTextView.text
+    }
     /*
     // MARK: - Navigation
 

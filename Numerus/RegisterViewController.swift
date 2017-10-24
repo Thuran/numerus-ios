@@ -110,8 +110,9 @@ class RegisterViewController: UIViewController {
         user.password = passwordInput.text
         user.photo = photoInput.text
         
-        RegisterModel.create(register: user) { (err) in
+        RegisterModel.create(register: user) { (resp, err) in
             if(err == nil){
+                userGlobal = resp
                 self.success()
             }else{
                 self.displayAlert(text: err!)
@@ -125,6 +126,7 @@ class RegisterViewController: UIViewController {
         let alert = UIAlertController(title: "Numerus", message: "Conta criada com sucesso!", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak alert] (_) in
+            
             self.openViewController(storyboardId: "tabBarController")
             
         }))

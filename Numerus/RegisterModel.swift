@@ -38,7 +38,7 @@ public class RegisterModel: Mappable {
     }
     
     
-    public static func create(register: RegisterModel,completionHandler:@escaping ((String?)->())) {
+    public static func create(register: RegisterModel,completionHandler:@escaping ((UserRead?, String?)->())) {
         let URL = "http://numerus-api.herokuapp.com/user"
         let headers: HTTPHeaders = [
             "Accept": "application/json",
@@ -46,11 +46,11 @@ public class RegisterModel: Mappable {
         ]
         
         
-        Alamofire.request(URL, method: .post, parameters: register.toJSON(), encoding: JSONEncoding.default, headers: headers).responseObject { (response: DataResponse<ErrorModel>) in
+        Alamofire.request(URL, method: .post, parameters: register.toJSON(), encoding: JSONEncoding.default, headers: headers).responseObject { (response: DataResponse<UserRead>) in
             if(response.result.isSuccess) {
-                completionHandler(nil)
+                completionHandler(response.result.value, nil)
             } else {
-                completionHandler(response.result.error?.localizedDescription)
+                completionHandler(nil, response.result.error?.localizedDescription)
             }
         }
     }

@@ -44,6 +44,23 @@ class UsingFormulaViewController: UIViewController {
     }
     
 
+    @IBAction func calculateButtonTouch(_ sender: Any) {
+        let math = CalculateExpression()
+        math.expr = [expression.text]
+        math.precision = 14
+        CalculateExpression.calculate(expr: math){ (response, err) in
+            if(err == nil){
+                if(response?.error == nil){
+                    self.expression.text = response?.result[0]
+                }else{
+                    self.displayAlert(text: (response?.error!)!)
+                }
+            }else{
+                self.displayAlert(text: err!)
+                
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

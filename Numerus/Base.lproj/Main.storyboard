@@ -409,6 +409,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="calculateButtonTouch:" destination="IEr-4l-pAz" eventType="touchUpInside" id="7ne-oc-9V3"/>
                                             <action selector="calculateButtonTouch:" destination="2K5-Me-1YU" eventType="touchUpInside" id="LHZ-9T-YuX"/>
                                         </connections>
                                     </button>
@@ -419,7 +420,7 @@
                                             <constraint firstAttribute="height" constant="39" id="cxx-vh-bgE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.85456601239999996" green="0.85456601239999996" blue="0.85456601239999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.74798753230000004" green="0.74798753230000004" blue="0.74798753230000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cMv-SY-nPf">
@@ -530,6 +531,10 @@
                                         <state key="normal" title="COMPARTILHAR">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareButtonTouch:" destination="2K5-Me-1YU" eventType="touchUpInside" id="TuQ-RP-2WC"/>
+                                            <segue destination="Q6q-uv-gFk" kind="show" id="bZp-he-TG9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMG-DI-c8j">
                                         <rect key="frame" x="0.0" y="208" width="320" height="80"/>
@@ -552,7 +557,7 @@
                                             <constraint firstAttribute="height" constant="39" id="hPA-PI-j8Y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.85456601239999996" green="0.85456601239999996" blue="0.85456601239999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.74798753228636361" green="0.74798753228636361" blue="0.74798753228636361" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -594,6 +599,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qG1-f0-XwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261.25" y="502.81690140845069"/>
+        </scene>
+        <!--Compartilhar-->
+        <scene sceneID="N1c-rA-mzg">
+            <objects>
+                <viewController storyboardIdentifier="shareFormulaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q6q-uv-gFk" customClass="ShareFormulaViewController" customModule="Numerus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hYe-Uj-XfP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fg0-EV-m1t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QcM-qV-ttE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVe-ro-eNT">
+                                <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1+2+3" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7g-pu-hn1">
+                                        <rect key="frame" x="0.0" y="90" width="320" height="200"/>
+                                        <color key="backgroundColor" red="0.89803799719999999" green="0.89803799719999999" blue="0.89803799719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="N98-d3-DbK"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.68580382630000003" green="0.31898201729999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Titulo da fórmula" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ic7-tj-hoS">
+                                        <rect key="frame" x="40" y="25" width="240" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5l0-Fm-o9Y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ1-go-Tcw">
+                                        <rect key="frame" x="0.0" y="298" width="320" height="80"/>
+                                        <color key="backgroundColor" red="1" green="0.50980392159999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="19b-c5-uHY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="COMPARTILHAR">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButtonTouch:" destination="Q6q-uv-gFk" eventType="touchUpInside" id="VcZ-ii-UKr"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para compartilhar troque as variavéis por letras e certifique-se que a fórmula esta correta." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdw-d0-3Vh">
+                                        <rect key="frame" x="8" y="386" width="304" height="55"/>
+                                        <color key="tintColor" red="0.85456601239999996" green="0.85456601239999996" blue="0.85456601239999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Fwp-k5-xZp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.74798753230000004" green="0.74798753230000004" blue="0.74798753230000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pdw-d0-3Vh" secondAttribute="trailing" constant="8" id="3l7-gF-IWf"/>
+                                    <constraint firstItem="Pdw-d0-3Vh" firstAttribute="leading" secondItem="gVe-ro-eNT" secondAttribute="leading" constant="8" id="Acc-tT-Fqk"/>
+                                    <constraint firstItem="h7g-pu-hn1" firstAttribute="leading" secondItem="gVe-ro-eNT" secondAttribute="leading" id="BwX-6y-oGu"/>
+                                    <constraint firstItem="h7g-pu-hn1" firstAttribute="centerX" secondItem="gVe-ro-eNT" secondAttribute="centerX" id="CTS-tY-ely"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ic7-tj-hoS" secondAttribute="trailing" constant="40" id="Cz5-hH-F0r"/>
+                                    <constraint firstItem="Pdw-d0-3Vh" firstAttribute="top" secondItem="AZ1-go-Tcw" secondAttribute="bottom" constant="8" id="Mv4-Hf-73U"/>
+                                    <constraint firstItem="AZ1-go-Tcw" firstAttribute="top" secondItem="h7g-pu-hn1" secondAttribute="bottom" constant="8" id="NZn-Tj-bkv"/>
+                                    <constraint firstItem="Ic7-tj-hoS" firstAttribute="leading" secondItem="gVe-ro-eNT" secondAttribute="leading" constant="40" id="fiZ-aM-bjU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pdw-d0-3Vh" secondAttribute="bottom" constant="127" id="gjb-DG-8lW"/>
+                                    <constraint firstItem="h7g-pu-hn1" firstAttribute="top" secondItem="Ic7-tj-hoS" secondAttribute="bottom" constant="15" id="hSO-EH-XbG"/>
+                                    <constraint firstAttribute="trailing" secondItem="AZ1-go-Tcw" secondAttribute="trailing" id="hb8-Z8-mhK"/>
+                                    <constraint firstItem="Ic7-tj-hoS" firstAttribute="top" secondItem="gVe-ro-eNT" secondAttribute="top" constant="25" id="l1b-m9-guj"/>
+                                    <constraint firstItem="AZ1-go-Tcw" firstAttribute="leading" secondItem="gVe-ro-eNT" secondAttribute="leading" id="qTl-LI-rv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="h7g-pu-hn1" secondAttribute="trailing" id="wJG-Xg-fZu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gVe-ro-eNT" firstAttribute="top" secondItem="hYe-Uj-XfP" secondAttribute="bottom" id="805-HE-X26"/>
+                            <constraint firstItem="gVe-ro-eNT" firstAttribute="leading" secondItem="QcM-qV-ttE" secondAttribute="leading" id="MvY-zW-EtN"/>
+                            <constraint firstAttribute="bottom" secondItem="gVe-ro-eNT" secondAttribute="bottom" constant="-64" id="Vzc-y3-nKK"/>
+                            <constraint firstAttribute="trailing" secondItem="gVe-ro-eNT" secondAttribute="trailing" id="l8S-ou-wlR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compartilhar" id="0q7-fB-3ig"/>
+                    <connections>
+                        <outlet property="contextTextView" destination="h7g-pu-hn1" id="kvd-wa-jQg"/>
+                        <outlet property="titleTextView" destination="Ic7-tj-hoS" id="vBW-ya-GGV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Fi-Uq-1dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3009.375" y="502.81690140845069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kmw-8Q-Gie">

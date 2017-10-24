@@ -9,6 +9,7 @@
 import UIKit
 
 var userGlobal: UserRead?
+var contextGlobal: String?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
